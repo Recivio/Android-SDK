@@ -369,5 +369,5 @@ Made with ❤️ by [Igor Sawczuk](https://www.linkedin.com/in/isawczuk/) for Re
 ## License
 
 recivio Android SDK is available under the Apache License 2.0.
-See the [recivio_LICENSE.txt](https://github.com/recivio/Android-SDK/blob/master/recivio_LICENSE.txt) file for more info.
+See the [recivio_LICENSE.txt](https://github.com/recivio/Android-SDK/blob/master/RECIVIO_LICENSE.txt) file for more info.
 
