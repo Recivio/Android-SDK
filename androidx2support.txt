@@ -1,0 +1,116 @@
+AndroidX version:
+
+- Rename module to: recivio-android-sdk
+
+- In recivio-android-sdk/build.gradle:
+
+    + Set android.compileSdkVersion to 29+
+    + Set android.defaultConfig.targetSdkVersion to 29+
+
+    + Replace support libraries dependencies with the following:
+    api 'com.google.android.material:material:1.2.0-alpha01'
+    api 'androidx.cardview:cardview:1.0.0'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.legacy:legacy-support-v13:1.0.0'
+    api 'androidx.annotation:annotation:1.1.0'
+
+    + In ext {} valorize the following attributes:
+        bintrayName = 'recivio-android-sdk'
+        artifact = 'recivio-android-sdk'
+        libraryName = 'Android-SDK'
+        libraryDescription = 'recivio Android SDK for integration in android app. See more at: https://www.recivio.com/'
+
+- In project/gradle.properties uncomment the following lines:
+    android.enableJetifier=true
+    android.useAndroidX=true
+
+- In com.recivio.sxdependencies.SxDependencies.kt
+    + Replace support imports with the following:
+        import android.content.Context
+        import android.graphics.Canvas
+        import android.util.AttributeSet
+        import androidx.appcompat.app.AlertDialog
+        import androidx.appcompat.app.AppCompatActivity
+        import androidx.appcompat.widget.*
+        import androidx.cardview.widget.CardView
+        import androidx.core.app.ActivityCompat
+        import androidx.core.app.NotificationCompat
+        import androidx.core.content.ContextCompat
+        import androidx.core.content.FileProvider
+        import androidx.core.graphics.drawable.DrawableCompat
+        import androidx.core.widget.ImageViewCompat
+        import androidx.fragment.app.DialogFragment
+        import androidx.fragment.app.FragmentActivity
+        import androidx.fragment.app.FragmentManager
+        import androidx.recyclerview.widget.DefaultItemAnimator
+        import androidx.recyclerview.widget.LinearLayoutManager
+        import androidx.recyclerview.widget.RecyclerView
+        import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        import com.google.android.material.appbar.AppBarLayout
+        import com.google.android.material.snackbar.Snackbar
+        import android.graphics.BlendMode
+        import android.graphics.BlendModeColorFilter
+        import android.graphics.PorterDuff
+        import android.graphics.drawable.Drawable
+        import android.os.Build
+        import android.widget.TextView
+
+    + Comment out targetSdkVersion <=28 code
+    + Comment in targetSdkVersion >=29 code
+
+- Check library version name
+
+
+====================================================================================================
+
+
+Support libraries version:
+
+- Rename module to: recivio-android-sdk-supportlibraries
+
+- In recivio-android-sdk/build.gradle:
+    + Set android.compileSdkVersion to 28
+    + Set android.defaultConfig.targetSdkVersion to 28
+    + Replace androidx libraries dependencies with the following:
+        api 'com.android.support:design:28.0.0'
+        api 'com.android.support:cardview-v7:28.0.0'
+        api 'com.android.support:recyclerview-v7:28.0.0'
+        api 'com.android.support:appcompat-v7:28.0.0'
+        api 'com.android.support:support-v13:28.0.0'
+        api 'com.android.support:support-annotations:28.0.0'
+
+    + In ext {} valorize the following attributes:
+        bintrayName = 'recivio-android-sdk-supportlibraries'
+        artifact = 'recivio-android-sdk-supportlibraries'
+        libraryName = 'Android-SDK-SupportLibraries'
+        libraryDescription = 'recivio Android SDK for integration in android app that depend from support libraries. See more at: https://www.recivio.com/'
+
+- In project/gradle.properties comment the following lines:
+    #android.enableJetifier=false
+    #android.useAndroidX=false
+
+- In com.recivio.sxdependencies.SxDependencies.kt
+    + Replace support imports with the following:
+        import android.content.Context
+        import android.graphics.Canvas
+        import android.support.design.widget.AppBarLayout
+        import android.support.design.widget.Snackbar
+        import android.support.v4.app.*
+        import android.support.v4.content.ContextCompat
+        import android.support.v4.content.FileProvider
+        import android.support.v4.graphics.drawable.DrawableCompat
+        import android.support.v4.widget.ImageViewCompat
+        import android.support.v4.widget.SwipeRefreshLayout
+        import android.support.v7.app.AlertDialog
+        import android.support.v7.app.AppCompatActivity
+        import android.support.v7.widget.*
+        import android.util.AttributeSet
+        import android.graphics.PorterDuff
+        import android.graphics.drawable.Drawable
+        import android.widget.TextView
+
+    + Comment out targetSdkVersion >=29 code
+    + Comment in targetSdkVersion <=28 code
+
+- Check library version name
